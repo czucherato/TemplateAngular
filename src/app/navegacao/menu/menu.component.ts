@@ -36,6 +36,12 @@ export class MenuComponent {
       name: 'Admin',
       exact: false,
       admin: false
+    },
+    {
+      link: '/filmes',
+      name: 'Filmes',
+      exact: false,
+      admin: false
     }
   ]
  }

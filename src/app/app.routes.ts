@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CadastroGuard } from './services/cadastro.guard';
 import { HomeComponent } from './navegacao/home/home.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 
@@ -23,6 +24,7 @@ const rootRouterConfig: Routes = [
         canLoad: [AuthGuard],
         canActivate: [AuthGuard]
      },
+     { path: 'filmes', component: FilmesComponent },
     
     { path: '**', component: NotFoundComponent }
 ];
