@@ -7,6 +7,8 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
+import { TestesComponent } from './demos/testes/testes.component';
+import { CitacaoComponent } from './demos/citacao/citacao.component';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -25,6 +27,8 @@ const rootRouterConfig: Routes = [
         canActivate: [AuthGuard]
      },
      { path: 'filmes', component: FilmesComponent },
+     { path: 'testes', component: TestesComponent },
+     { path: 'citacao', component: CitacaoComponent },
     
     { path: '**', component: NotFoundComponent }
 ];

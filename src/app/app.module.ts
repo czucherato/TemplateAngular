@@ -16,6 +16,8 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { TestesComponent } from './demos/testes/testes.component';
+import { CitacaoComponent } from './demos/citacao/citacao.component';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -24,7 +26,9 @@ registerLocaleData(localePt);
     SobreComponent,
     CadastroComponent,
     FilmesComponent,
-    FileSizePipe
+    FileSizePipe,
+    TestesComponent,
+    CitacaoComponent
   ],
   imports: [
     NgBrazil,

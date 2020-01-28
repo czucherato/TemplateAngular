@@ -42,6 +42,18 @@ export class MenuComponent {
       name: 'Filmes',
       exact: false,
       admin: false
+    },
+    {
+      link: '/testes',
+      name: 'Testes',
+      exact: false,
+      admin: false
+    },
+    {
+      link: '/citacao',
+      name: 'Citação',
+      exact: false,
+      admin: false
     }
   ]
  }

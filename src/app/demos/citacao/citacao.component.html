@@ -1,0 +1,33 @@
+<div class="container main-container container-fluid">
+    <div class="row">
+        <div class="col-8 col-sm-8 mb-3 offset-2">
+            <div class="card">
+                <div class="card-header">
+                    <h5>No que está pensando?</h5>
+                </div>
+                <div class="card-body">
+                    <div role="form">
+                        <div class="form-group col-8 offset-2">
+                            <textarea #citacao class="form-control" name="texto" [(ngModel)]="texto" cols="3"
+                                rows="8"></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary" (click)="adicionar()" [disabled]="texto == null">Adicionar
+                                citação</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card.mb-3.col-5.list-card" style="max-width: 18rem;" *ngFor="let citacao of citacoes; let i = index" (click)="remover(i)">
+            <div class="car-body">
+                <h6>{{citacao.texto}}</h6>
+            </div>
+            <div class="card-footer text-muted">
+                <small>Criado em {{citacao.data}}</small>
+            </div>
+        </div>
+    </div>
+</div>
