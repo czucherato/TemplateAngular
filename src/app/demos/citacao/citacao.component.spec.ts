@@ -69,8 +69,8 @@ describe('CitacaoComponent', () => {
     const fakedFetchedList = [
       new Citacao("I love unit testing", "Mon 4, 2018")
     ];
-    const quoteService = fixture.debugElement.injector.get(CitacaoService);
-    let spy = spyOn(quoteService, "filtrarDoServidor").and.returnValue(
+    const citacaoService = fixture.debugElement.injector.get(CitacaoService);
+    let spy = spyOn(citacaoService, "filtrarDoServidor").and.returnValue(
       Promise.resolve(fakedFetchedList)
     );
     fixture.detectChanges();
