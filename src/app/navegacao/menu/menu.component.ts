@@ -54,6 +54,12 @@ export class MenuComponent {
       name: 'Citação',
       exact: false,
       admin: false
+    },
+    {
+      link: '/bar',
+      name: 'Bar',
+      exact: false,
+      admin: false
     }
   ]
  }

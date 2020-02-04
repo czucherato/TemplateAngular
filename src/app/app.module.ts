@@ -1,6 +1,6 @@
 import { NgBrazil } from 'ng-brazil';
 import { TextMask } from 'ng-brazil';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
 import { AuthGuard } from './services/app.guard';
@@ -18,7 +18,13 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { TestesComponent } from './demos/testes/testes.component';
 import { CitacaoComponent } from './demos/citacao/citacao.component';
+import { BarModule } from './demos/bar-di-zones/bar.module';
+import { BarService } from './demos/bar-di-zones/bar.service';
 registerLocaleData(localePt);
+
+export const BAR_PROVIDERS: Provider[] = [
+  BarService
+];
 
 @NgModule({
   declarations: [
@@ -32,6 +38,10 @@ registerLocaleData(localePt);
   ],
   imports: [
     NgBrazil,
+    BarModule.forRoot({
+      unidadeId: 100,
+      unidadeToken: 'eca938c99a0e9ff91029dc'
+    }),
     FormsModule,
     BrowserModule,
     NavegacaoModule,
@@ -42,7 +52,8 @@ registerLocaleData(localePt);
   ],
   providers: [
     AuthGuard,
-    CadastroGuard
+    CadastroGuard,
+    // BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })

@@ -9,6 +9,7 @@ import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { TestesComponent } from './demos/testes/testes.component';
 import { CitacaoComponent } from './demos/citacao/citacao.component';
+import { BarComponent } from './demos/bar-di-zones/bar.component';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -29,6 +30,7 @@ const rootRouterConfig: Routes = [
      { path: 'filmes', component: FilmesComponent },
      { path: 'testes', component: TestesComponent },
      { path: 'citacao', component: CitacaoComponent },
+     { path: 'bar', component: BarComponent },
     
     { path: '**', component: NotFoundComponent }
 ];
