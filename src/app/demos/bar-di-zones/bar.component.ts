@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { OnInit, Component, Inject, Injector } from '@angular/core';
+import { OnInit, Component, Inject, Injector, NgZone } from '@angular/core';
 import { BarUnidadeConfig, BAR_UNIDADE_CONFIG } from './bar.config';
 import { BarService, BarServiceMock, BarFactory, BebidaService } from './bar.service';
 
@@ -28,7 +28,8 @@ export class BarComponent implements OnInit {
         private barService: BarService,
         @Inject('configManualUnidade') private ApiConfigManual: BarUnidadeConfig,
         @Inject(BAR_UNIDADE_CONFIG) private ApiConfig: BarUnidadeConfig,
-        private bebidaService: BebidaService
+        private bebidaService: BebidaService,
+        private ngZone: NgZone
         ){ }
     
     barBebida1: string;
@@ -36,6 +37,8 @@ export class BarComponent implements OnInit {
     ConfigManual: BarUnidadeConfig;
     Config: BarUnidadeConfig;
     dadosUnidade: string;
+    progress: number = 0;
+    label: string;
 
     ngOnInit(): void {
         this.barBebida1 = this.barService.obterBebidas();
@@ -45,4 +48,30 @@ export class BarComponent implements OnInit {
         this.barBebida2 = this.bebidaService.obterBebidas();
      }
 
+     processWithinAngularZone() {
+         this.label = 'dentro';
+         this.progress = 0;
+         this._increaseProgress(() => console.log('Finalizado por dentro do Angular!'));
+     }
+
+     processOutsideOfAngularZone() {
+         this.label = 'fora';
+         this.progress = 0;
+         this.ngZone.runOutsideAngular(() => {
+             this._increaseProgress(() => {
+                 this.ngZone.run(() => console.log('Finalizado por fora do Angular!'));
+             });
+         });
+     }
+
+     _increaseProgress(doneCallback: () => void) {
+         this.progress += 1;
+         console.log(`Processo atual: ${this.progress}%`);
+
+         if (this.progress < 100) {
+             window.setTimeout(() => this._increaseProgress(doneCallback), 10);
+         } else {
+             doneCallback();
+         }
+     }
 }
