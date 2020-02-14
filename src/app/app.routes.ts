@@ -10,6 +10,7 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 import { TestesComponent } from './demos/testes/testes.component';
 import { CitacaoComponent } from './demos/citacao/citacao.component';
 import { BarComponent } from './demos/bar-di-zones/bar.component';
+import { TodoListComponent } from './demos/todo-list/todo-list.component';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -31,6 +32,7 @@ const rootRouterConfig: Routes = [
      { path: 'testes', component: TestesComponent },
      { path: 'citacao', component: CitacaoComponent },
      { path: 'bar', component: BarComponent },
+     { path: 'todo-list', component: TodoListComponent },
     
     { path: '**', component: NotFoundComponent }
 ];

@@ -60,6 +60,12 @@ export class MenuComponent {
       name: 'Bar',
       exact: false,
       admin: false
+    },
+    {
+      link: '/todo-list',
+      name: 'Todo-list',
+      exact: false,
+      admin: false
     }
   ]
  }
