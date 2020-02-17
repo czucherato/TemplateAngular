@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Store } from '../../todo-list.store';
+import { Component, OnInit } from '@angular/core';
 import { TodoListService } from '../../todo-list.service';
 
 @Component({
@@ -9,11 +11,20 @@ import { TodoListService } from '../../todo-list.service';
 })
 export class TasksFinalizadasComponent implements OnInit {
 
-  constructor(private todoListService: TodoListService) { }
+  constructor(
+    private todoListService: TodoListService,
+    private store: Store) { }
 
   todoList$: Observable<any[]>;
 
   ngOnInit() {
-    this.todoList$ = this.todoListService.getToDoList$;
+    this.todoList$ = this.store.getTodoList()
+    .pipe(
+      map(todoList => todoList.filter(task => task.finalizado))
+    );
+  }
+
+  onToggle(event) {
+    this.todoListService.toggle(event);
   }
 }

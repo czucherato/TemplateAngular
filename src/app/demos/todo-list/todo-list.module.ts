@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { Store } from './todo-list.store';
 import { CommonModule } from '@angular/common';
 import { TodoListService } from './todo-list.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +22,7 @@ import { TasksFinalizadasComponent } from './components/tasks-finalizadas/tasks-
     HttpClientModule,
   ],
   providers: [
+    Store,
     TodoListService,
   ],
   exports: [
