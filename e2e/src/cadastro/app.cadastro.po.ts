@@ -1,11 +1,25 @@
 import { browser, by, element } from 'protractor';
+import { AppBasePage } from '../app.base.po';
 
-export class AppCadastroPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+export class AppCadastroPage extends AppBasePage {
+  constructor() {
+    super();
+  }
+  
+  navegarParaCadastro() {
+    this.navegarViaUrl('/cadastro');
   }
 
-  getTitleText() {
-    return element(by.xpath('/html/body/app-root/app-home/header/div/div/div[2]/h1')).getText() as Promise<string>;
+  navegarParCadastroPorLink() {
+    this.navegarPorLink('Cadastro');
+  }
+
+  iniciarNavegacao() {
+    this.navegarParaHome();
+    this.navegarParCadastroPorLink();
+  }
+
+  obterTituloCadastro() {
+    return this.obterElementoXpath('/html/body/app-root/app-cadastro/div/h4').getText();
   }
 }
