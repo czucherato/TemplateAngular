@@ -66,6 +66,12 @@ export class MenuComponent {
       name: 'Todo-list',
       exact: false,
       admin: false
+    },
+    {
+      link: '/contador',
+      name: 'Contador',
+      exact: false,
+      admin: false
     }
   ]
  }

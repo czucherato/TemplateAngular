@@ -11,6 +11,7 @@ import { TestesComponent } from './demos/testes/testes.component';
 import { CitacaoComponent } from './demos/citacao/citacao.component';
 import { BarComponent } from './demos/bar-di-zones/bar.component';
 import { TodoListComponent } from './demos/todo-list/todo-list.component';
+import { ContadorComponent } from './demos/contador/contador.component';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -33,6 +34,7 @@ const rootRouterConfig: Routes = [
      { path: 'citacao', component: CitacaoComponent },
      { path: 'bar', component: BarComponent },
      { path: 'todo-list', component: TodoListComponent },
+     { path: 'contador', component: ContadorComponent },
     
     { path: '**', component: NotFoundComponent }
 ];

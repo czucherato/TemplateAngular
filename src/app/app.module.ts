@@ -21,6 +21,7 @@ import { CitacaoComponent } from './demos/citacao/citacao.component';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarService } from './demos/bar-di-zones/bar.service';
 import { TodoListModule } from './demos/todo-list/todo-list.module';
+import { ContadorComponent } from './demos/contador/contador.component';
 registerLocaleData(localePt);
 
 export const BAR_PROVIDERS: Provider[] = [
@@ -35,7 +36,8 @@ export const BAR_PROVIDERS: Provider[] = [
     FilmesComponent,
     FileSizePipe,
     TestesComponent,
-    CitacaoComponent
+    CitacaoComponent,
+    ContadorComponent
   ],
   imports: [
     NgBrazil,
