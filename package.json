@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "angular2-text-mask": "^9.0.0",
+    "chromedriver": "^81.0.0",
     "json-server": "^0.16.0",
     "logrocket": "^1.0.6",
     "ng-brazil": "^2.0.9",
@@ -44,7 +45,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
-    "protractor": "~5.4.0",
+    "protractor": "^5.4.3",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
