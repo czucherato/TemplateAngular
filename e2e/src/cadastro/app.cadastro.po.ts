@@ -22,4 +22,19 @@ export class AppCadastroPage extends AppBasePage {
   obterTituloCadastro() {
     return this.obterElementoXpath('/html/body/app-root/app-cadastro/div/h4').getText();
   }
+
+  campoNome = element(by.id('nome'));
+  campoCpf = element(by.id('cpf'));
+  campoEmail = element(by.id('email'));
+  campoSenha = element(by.id('senha'));
+  campoSenhaConfirmacao = element(by.id('senhaConfirmacao'));
+  botaoRegistrar = element(by.id('Registrar'));
+
+  obterResultadoCadastro() {
+    return this.obterElementoXpath('/html/body/app-root/app-cadastro/div/form/div/div[7]/div/p[4]').getText();
+  }
+
+  obterErroSenha() {
+    return this.obterElementoXpath('/html/body/app-root/app-cadastro/div/form/div/div[5]/div/span').getText();
+  }
 }

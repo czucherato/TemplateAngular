@@ -9,7 +9,7 @@ describe('Testes da página inicial', () => {
   });
 
   it('deve exibir uma mensagem na pagina inicial.', () => {
-    page.navigateTo();
+    page.navegarParaHome();
     expect(page.getTitleText()).toEqual('Desenvolvimento Avançado em Angular');
   });
 
